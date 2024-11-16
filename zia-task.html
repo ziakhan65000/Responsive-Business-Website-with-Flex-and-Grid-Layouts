@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        /* Header Section (Fluid Layout) */
+        header nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Logo on one side, nav links on the other */
+            padding: 1em; /* Padding for space inside the navbar */
+            background-color: #333; /* Dark background for the navbar */
+            color: white; /* White text color for better contrast */
+           
+        }
+        .nav-links {
+            display: flex; /* Display nav links in a row */
+            gap: 2em; /* Space between links */
+        }
+        .nav-links a {
+            color: white; /* White link color */
+            text-decoration: none; /* Remove underline */
+        }
+        /* Responsive navbar for smaller screens */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column; /* Stack links vertically on small screens */
+                gap: 1em; /* Reduce gap between the links */
+            }
+        }
+        /* Hero Section (Grid Layout) */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            align-items: center; /* Vertically align the content */
+            padding: 2em;
+        }
+        .hero-text {
+            padding-right: 1em; /* Space between text and image */
+        }
+        .hero-image img {
+            max-width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+        /* Responsive adjustments for the hero section */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr; /* Stack text and image vertically */
+            }
+        }
+        /* Features Section (Flex Layout) */
+        .features {
+            display: flex; /* Use flexbox to display features in a row */
+            justify-content: space-between; /* Even space between the feature boxes */
+            padding: 2em;
+        }
+        .feature-box {
+            flex: 1; /* Each box takes equal width */
+            margin: 0 1em; /* Add space between the boxes */
+            padding: 2em;
+            background-color: #f4f4f4; /* Light gray background for feature boxes */
+            text-align: center; /* Center align the content */
+        }
+        /* Responsive adjustments for the features section */
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column; /* Stack feature boxes vertically */
+            }
+            .feature-box {
+                margin-bottom: 1em; /* Add spacing between stacked boxes */
+            }
+        }
+        /* Services Section (Grid Layout) */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns for services */
+            grid-gap: 1em; /* Gap between service cards */
+            padding: 2em;
+        }
+        .service-card {
+            padding: 2em;
+            background-color: #e2e2e2; /* Light gray background */
+            text-align: center;
+        }
+        /* Responsive adjustments for the services section */
+        @media (max-width: 1024px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+            }
+        }
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr; /* Single column for mobile */
+            }
+        }
+        /* About Section (Fluid Layout) */
+        .about {
+            padding: 2em;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        /* Use fluid typography for about section */
+        .about p {
+            font-size: 2vw; /* Responsive font size based on viewport width */
+        }
+        /* Testimonials Section (Flex Layout) */
+        .testimonials {
+            display: flex;
+            justify-content: center; /* Center the testimonial cards */
+            gap: 2em; /* Space between cards */
+            padding: 2em;
+        }
+        .testimonial {
+            padding: 2em;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        /* Responsive adjustments for testimonials section */
+        @media (max-width: 768px) {
+            .testimonials {
+                flex-direction: column; /* Stack testimonials vertically */
+                align-items: center;
+            }
+        }
+        /* Footer Section (Fluid Layout) */
+        footer {
+            padding: 1em;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        footer ul {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            list-style: none;
+        }
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        /* Responsive footer adjustments */
+        @media (max-width: 768px) {
+            footer ul {
+                flex-direction: column; /* Stack footer links vertically */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">MyWebsite</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to MyWebsite</h1>
+            <p>Explore the best services we offer!</p>
+            <a href="#" class="cta">Get Started</a>
+        </div>
+        <div class="hero-image">
+            <img src="photo.png" alt="Hero Image">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-box">
+            <h2>Fast Delivery</h2>
+            <p>We ensure fast and reliable delivery for all your orders.</p>
+        </div>
+        <div class="feature-box">
+            <h2>24/7 Support</h2>
+            <p>Our support team is available 24/7 to help you with any queries.</p>
+        </div>
+        <div class="feature-box">
+            <h2>Secure Payment</h2>
+            <p>We offer secure payment options to ensure your transactions are safe.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="service-card">
+            <h2>Web Development</h2>
+            <p>We build high-quality, responsive websites tailored to your business needs.</p>
+        </div>
+        <div class="service-card">
+            <h2>App Development</h2>
+            <p>Create powerful and user-friendly apps for mobile devices with our experts.</p>
+        </div>
+        <div class="service-card">
+            <h2>SEO Services</h2>
+            <p>Improve your online presence and rank higher on search engines with our SEO services.</p>
+        </div>
+        <div class="service-card">
+            <h2>Content Creation</h2>
+            <p>We provide content creation services to keep your audience engaged and informed.</p>
+        </div>
+        <div class="service-card">
+            <h2>Digital Marketing</h2>
+            <p>Boost your brand with our tailored digital marketing strategies.</p>
+        </div>
+        <div class="service-card">
+            <h2>Consulting</h2>
+            <p>Get expert advice to help your business grow and succeed in the digital space.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About MyWebsite</h2>
+        <p>At MyWebsite, we are dedicated to providing top-notch digital services to help your business thrive in today's competitive landscape.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonial">
+            <p>"I was blown away by their web development services. Highly recommended!" - John Doe</p>
+        </div>
+        <div class="testimonial">
+            <p>"They helped my business grow with their digital marketing expertise. Fantastic team!" - Jane Smith</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 MyWebsite</p>
+    </footer>
+</body>
+</html>
